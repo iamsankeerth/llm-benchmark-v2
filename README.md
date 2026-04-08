@@ -151,9 +151,27 @@ MODEL_CONFIG = {
 
 # Benchmark settings
 MAX_NEW_TOKENS = 128          # Output token limit
-TEMPS_TO_TEST = [0.0, 0.7]    # Temperature comparison
+TEMPS_TO_TEST = [0.0, 0.7, 1.0]    # Temperature comparison (Phase 2)
 PHASE2_PROMPT_LIMIT = 10      # JSON validation subsample
 ```
+
+### CSV Output Columns
+
+| Column | Phase | Description |
+|--------|-------|-------------|
+| `model` | Phase 1 | Model name |
+| `prompt_id` | Phase 1 | Prompt ID |
+| `category` | Phase 1 | Prompt category|
+| `prompt` | Phase 1 | Full prompt text |
+| `output` | Phase 1 | Model response (temp=1.0) |
+| `tps` | Phase 1 | Tokens per second |
+| `ttft` | Phase 1 | Time to first token |
+| `latency` | Phase 1 | Total response time |
+| `peak_vram_mb` | Phase 1 | GPU memory usage |
+| `temperature` | Phase 1 | Temperature (1.0) |
+| `temp_0.0_output` | Phase 2 | JSON output at temp=0.0 |
+| `temp_0.7_output` | Phase 2 | JSON output at temp=0.7 |
+| `temp_1.0_output` | Phase 2 | JSON output at temp=1.0 |
 
 ## Observability Features
 

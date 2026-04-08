@@ -277,6 +277,7 @@ def run_project_pipeline():
                             temp_res = tester.generate_single_with_retry(model_tag, p["prompt"], category=target_category, temperature=temp)
                             unified_data[f"temp_{temp}_success"] = temp_res["success"]
                             unified_data[f"temp_{temp}_error"] = temp_res["error"]
+                            unified_data[f"temp_{temp}_output"] = temp_res["output"]
                     
                     model_results.append(unified_data)
                     

@@ -25,7 +25,7 @@ WARMUP_RUNS = 0
 # Step 1: Reduce Tokens to safely cap generation bandwidth while hitting logical structs
 MAX_NEW_TOKENS = 128          
 # Step 1: Drastically optimize total inferences to only check extremes
-TEMPS_TO_TEST = [0.0, 0.7]    
+TEMPS_TO_TEST = [0.0, 0.7, 1.0]    
 # Step 1: Subsample Phase 2 test limits to drop runtimes dramatically (84% speedup)
 PHASE2_PROMPT_LIMIT = 10      
 

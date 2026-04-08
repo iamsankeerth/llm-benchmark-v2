@@ -18,23 +18,21 @@ class OllamaClient:
         # We can configure the host if needed, defaults to localhost
         pass
 
-    def generate_benchmark(self, model: str, prompt: str, max_tokens: int = 128, is_vision: bool = False) -> BenchmarkResult:
+    def generate_benchmark(self, model: str, prompt: str, max_tokens: int = 128, temperature: float = 1.0, is_vision: bool = False) -> BenchmarkResult:
         try:
             start_time = time.perf_counter()
             first_token_time = None
             
             message = {'role': 'user', 'content': prompt}
             if is_vision:
-                # Provide a generic 1x1 PNG transparent pixel for baseline testing
                 message['images'] = ["iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="]
             
-            # Using streaming to capture TTFT
             stream = ollama.generate(
                 model=model,
                 prompt=prompt,
                 images=message.get('images'),
                 stream=True,
-                options={"num_predict": max_tokens}
+                options={"num_predict": max_tokens, "temperature": temperature}
             )
             
             content_chunks = []

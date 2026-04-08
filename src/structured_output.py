@@ -23,13 +23,13 @@ class StructuredOutputTester:
             
             if error:
                 if attempt == max_retries:
-                    return {"success": False, "error": error}
+                    return {"success": False, "error": error, "output": content}
                 continue
                 
             try:
                 valid_data = schema_class.model_validate_json(content)
-                return {"success": True, "error": None}
+                return {"success": True, "error": None, "output": content}
             except ValidationError as ve:
                 prompt += f"\n\nYour previous response failed JSON validation. Ensure it exactly matches the schema. Error: {ve}"
                 
-        return {"success": False, "error": "Max retries exceeded"}
+        return {"success": False, "error": "Max retries exceeded", "output": content}

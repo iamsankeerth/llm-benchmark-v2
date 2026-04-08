@@ -23,9 +23,12 @@ class Benchmarker:
             "model": model,
             "prompt_id": prompt_data.get("id"),
             "category": prompt_data["category"],
+            "prompt": prompt_data["prompt"],
+            "output": res.content,
             "tps": res.tps,
             "ttft": res.ttft,
             "latency": res.latency,
             "peak_vram_mb": peak_vram,
+            "temperature": 1.0,
             "error": res.error
         }
