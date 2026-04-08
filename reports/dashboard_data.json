@@ -1,6 +1,13 @@
 {
   "summary": [
     {
+      "model": "qwen2.5-coder:0.5b",
+      "tps": 126.66283440944822,
+      "ttft": 0.08658230399993039,
+      "latency": 1.1089653199998066,
+      "peak_vram_mb": 1001.50390625
+    },
+    {
       "model": "tinyllama",
       "tps": 49.04676329880315,
       "ttft": 1.081841978000096,
@@ -10,7 +17,12 @@
   ],
   "category_summary": {
     "Chat & Generation": {
+      "qwen2.5-coder:0.5b": NaN,
       "tinyllama": 49.04676329880315
+    },
+    "Coding Generation": {
+      "qwen2.5-coder:0.5b": 126.66283440944822,
+      "tinyllama": NaN
     }
   }
 }

@@ -8,8 +8,8 @@ MODELS_DIR = os.path.join(BASE_DIR, "models")
 
 # TEMPORARY: Single model for testing
 MODEL_CONFIG = {
-    "Chat": [
-        {"name": "TinyLlama-1.1B", "ollama_tag": "tinyllama", "source": "ollama"},
+    "Coding": [
+        {"name": "qwen2.5-coder:0.5b", "ollama_tag": "qwen2.5-coder:0.5b", "source": "ollama"},
     ]
 }
 

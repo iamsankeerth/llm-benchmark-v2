@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-08T16:50:23.342920",
+  "last_updated": "2026-04-08T17:03:15.512324",
   "models": {
     "TinyLlama-1.1B": {
       "status": "completed",
@@ -11,6 +11,17 @@
       "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\TinyLlama-1.1B_MegaBench_20260408_165023.csv",
       "error": null,
       "last_checkpoint": "2026-04-08T16:50:23.315478"
+    },
+    "qwen2.5-coder:0.5b": {
+      "status": "completed",
+      "category": "Coding",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T17:01:21.137431",
+      "completed_at": "2026-04-08T17:03:15.512312",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5-coder_0.5b_MegaBench_20260408_170315.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T17:03:15.485447"
     }
   }
 }
