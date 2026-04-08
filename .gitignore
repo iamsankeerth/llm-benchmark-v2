@@ -18,6 +18,11 @@ env/
 # Model downloads (large files)
 models/
 
+# Large binaries
+*.exe
+*.dll
+*.incomplete
+
 # OS
 .DS_Store
 Thumbs.db
