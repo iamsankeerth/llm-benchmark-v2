@@ -96,9 +96,12 @@ def download_model(model_entry: dict) -> str:
         return ollama_tag
     
     if source == "ollama":
-        log(f"Pulling natively from Ollama: {ollama_tag}")
-        log("Download progress:")
-        subprocess.run(["ollama", "pull", ollama_tag], encoding='utf-8', errors='replace')
+        log(f"Pulling {ollama_tag} from Ollama...")
+        result = subprocess.run(["ollama", "pull", ollama_tag], capture_output=True, encoding='utf-8', errors='replace')
+        if result.returncode == 0:
+            log(f"Successfully downloaded {ollama_tag}")
+        else:
+            log(f"Pull output: {result.stdout[-500:] if len(result.stdout) > 500 else result.stdout}")
         
     elif source == "huggingface":
         hf_repo = model_entry.get("hf_repo")
@@ -110,10 +113,11 @@ def download_model(model_entry: dict) -> str:
         if not check_disk_space(required_gb=5.0):
             return None
             
-        log(f"Downloading from HuggingFace: {hf_repo}")
-        log("Download progress:")
+        log(f"Downloading {hf_repo} from HuggingFace...")
         local_dir = os.path.join(MODELS_DIR, ollama_tag.replace(':', '_'))
-        subprocess.run(["python", "-m", "huggingface_hub.commands.huggingface_cli", "download", hf_repo, "--local-dir", local_dir, "--local-dir-use-symlinks", "False"], encoding='utf-8', errors='replace')
+        result = subprocess.run(["python", "-m", "huggingface_hub.commands.huggingface_cli", "download", hf_repo, "--local-dir", local_dir, "--local-dir-use-symlinks", "False"], capture_output=True, encoding='utf-8', errors='replace')
+        if result.returncode != 0:
+            log(f"HuggingFace download error: {result.stderr[-500:] if len(result.stderr) > 500 else result.stderr}")
         
         # Identify the GGUF file
         gguf_files = [f for f in os.listdir(local_dir) if f.endswith('.gguf')]

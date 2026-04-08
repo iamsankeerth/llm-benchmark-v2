@@ -1,0 +1,16 @@
+{
+  "summary": [
+    {
+      "model": "tinyllama",
+      "tps": 49.04676329880315,
+      "ttft": 1.081841978000096,
+      "latency": 2.6012187739999355,
+      "peak_vram_mb": 1601.50390625
+    }
+  ],
+  "category_summary": {
+    "Chat & Generation": {
+      "tinyllama": 49.04676329880315
+    }
+  }
+}
