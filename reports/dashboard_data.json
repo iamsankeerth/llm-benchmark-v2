@@ -1,0 +1,62 @@
+{
+  "summary": [
+    {
+      "model": "llama3.2:1b",
+      "tps": 0.0,
+      "ttft": 0.0,
+      "latency": 0.0,
+      "peak_vram_mb": 131.0
+    },
+    {
+      "model": "phi4-mini-reasoning",
+      "tps": 0.0,
+      "ttft": 0.0,
+      "latency": 0.0,
+      "peak_vram_mb": 2653.50390625
+    },
+    {
+      "model": "qwen2.5-coder:1.5b-instruct",
+      "tps": 0.0,
+      "ttft": 0.0,
+      "latency": 0.0,
+      "peak_vram_mb": 2533.50390625
+    },
+    {
+      "model": "starcoder2:3b",
+      "tps": 56.33422156854606,
+      "ttft": 0.13635736449997238,
+      "latency": 0.9356697585000348,
+      "peak_vram_mb": 2996.5078125
+    },
+    {
+      "model": "tinyllama",
+      "tps": 109.98481389033417,
+      "ttft": 0.10567169399999327,
+      "latency": 1.2856756520001,
+      "peak_vram_mb": 1523.50390625
+    }
+  ],
+  "category_summary": {
+    "Chat & Generation": {
+      "llama3.2:1b": NaN,
+      "phi4-mini-reasoning": NaN,
+      "qwen2.5-coder:1.5b-instruct": NaN,
+      "starcoder2:3b": NaN,
+      "tinyllama": 109.98481389033417
+    },
+    "Coding Generation": {
+      "llama3.2:1b": 0.0,
+      "phi4-mini-reasoning": NaN,
+      "qwen2.5-coder:1.5b-instruct": 0.0,
+      "starcoder2:3b": 56.33422156854606,
+      "tinyllama": NaN
+    },
+    "Medium Reasoning": {
+      "llama3.2:1b": NaN,
+      "phi4-mini-reasoning": 0.0,
+      "qwen2.5-coder:1.5b-instruct": NaN,
+      "starcoder2:3b": NaN,
+      "tinyllama": NaN
+    }
+  }
+}

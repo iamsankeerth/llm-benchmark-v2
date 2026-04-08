@@ -1,0 +1,1002 @@
+[
+    {
+        "id": 1,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Rust thread-safe B-Tree. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 2,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Rust thread-safe B-Tree. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 3,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Rust thread-safe B-Tree. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 4,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Rust thread-safe B-Tree. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 5,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Rust thread-safe B-Tree. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 6,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C++ lock-free queue. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 7,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C++ lock-free queue. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 8,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C++ lock-free queue. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 9,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C++ lock-free queue. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 10,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C++ lock-free queue. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 11,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Redis Lua rate limiter. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 12,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Redis Lua rate limiter. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 13,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Redis Lua rate limiter. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 14,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Redis Lua rate limiter. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 15,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Redis Lua rate limiter. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 16,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C memory-mapped JSON parser. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 17,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C memory-mapped JSON parser. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 18,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C memory-mapped JSON parser. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 19,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C memory-mapped JSON parser. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 20,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: C memory-mapped JSON parser. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 21,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: CUDA tiled matrix mult. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 22,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: CUDA tiled matrix mult. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 23,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: CUDA tiled matrix mult. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 24,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: CUDA tiled matrix mult. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 25,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: CUDA tiled matrix mult. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 26,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: React virtualization hook. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 27,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: React virtualization hook. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 28,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: React virtualization hook. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 29,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: React virtualization hook. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 30,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: React virtualization hook. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 31,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Go Huffman + RLE compressor. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 32,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Go Huffman + RLE compressor. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 33,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Go Huffman + RLE compressor. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 34,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Go Huffman + RLE compressor. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 35,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Go Huffman + RLE compressor. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 36,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Solidity NFT fractional standard. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 37,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Solidity NFT fractional standard. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 38,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Solidity NFT fractional standard. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 39,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Solidity NFT fractional standard. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 40,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Solidity NFT fractional standard. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 41,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Python A* 3D pathfinding. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 42,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Python A* 3D pathfinding. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 43,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Python A* 3D pathfinding. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 44,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Python A* 3D pathfinding. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 45,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: Python A* 3D pathfinding. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 46,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: PostgreSQL recursive BOM cost. Constraint: Optimize for O(1) time complexity."
+    },
+    {
+        "id": 47,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: PostgreSQL recursive BOM cost. Constraint: Guarantee zero heap allocations."
+    },
+    {
+        "id": 48,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: PostgreSQL recursive BOM cost. Constraint: Ensure absolute cache locality."
+    },
+    {
+        "id": 49,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: PostgreSQL recursive BOM cost. Constraint: Bypass standard library limitations."
+    },
+    {
+        "id": 50,
+        "category": "Coding Generation",
+        "prompt": "Write a complete implementation of: PostgreSQL recursive BOM cost. Constraint: Ensure strictly wait-free algorithms."
+    },
+    {
+        "id": 51,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: The Grandfather Paradox. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 52,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: The Grandfather Paradox. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 53,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: The Grandfather Paradox. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 54,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: The Grandfather Paradox. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 55,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: The Grandfather Paradox. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 56,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Universal Basic Income. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 57,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Universal Basic Income. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 58,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Universal Basic Income. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 59,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Universal Basic Income. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 60,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Universal Basic Income. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 61,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Arrow of Time and Entropy. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 62,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Arrow of Time and Entropy. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 63,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Arrow of Time and Entropy. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 64,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Arrow of Time and Entropy. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 65,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Arrow of Time and Entropy. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 66,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Utilitarian self-driving cars. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 67,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Utilitarian self-driving cars. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 68,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Utilitarian self-driving cars. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 69,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Utilitarian self-driving cars. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 70,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Utilitarian self-driving cars. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 71,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Byzantine Generals Problem. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 72,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Byzantine Generals Problem. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 73,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Byzantine Generals Problem. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 74,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Byzantine Generals Problem. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 75,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Byzantine Generals Problem. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 76,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Many-Worlds interpretation. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 77,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Many-Worlds interpretation. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 78,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Many-Worlds interpretation. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 79,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Many-Worlds interpretation. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 80,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Many-Worlds interpretation. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 81,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Information Paradox in Black Holes. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 82,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Information Paradox in Black Holes. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 83,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Information Paradox in Black Holes. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 84,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Information Paradox in Black Holes. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 85,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Information Paradox in Black Holes. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 86,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Ship of Theseus via biological cells. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 87,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Ship of Theseus via biological cells. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 88,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Ship of Theseus via biological cells. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 89,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Ship of Theseus via biological cells. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 90,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Ship of Theseus via biological cells. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 91,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Simulated Universe hypothesis. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 92,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Simulated Universe hypothesis. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 93,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Simulated Universe hypothesis. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 94,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Simulated Universe hypothesis. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 95,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Simulated Universe hypothesis. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 96,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Game theory of nuclear deterioration. Critique the foundational logic using deductive reasoning."
+    },
+    {
+        "id": 97,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Game theory of nuclear deterioration. Formulate an original resolution bridging physics and philosophy."
+    },
+    {
+        "id": 98,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Game theory of nuclear deterioration. Extrapolate the economic meta-effects over a 100-year timescale."
+    },
+    {
+        "id": 99,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Game theory of nuclear deterioration. Debunk the counter-arguments using historical precedents."
+    },
+    {
+        "id": 100,
+        "category": "Medium Reasoning",
+        "prompt": "Analyze the following paradox/concept: Game theory of nuclear deterioration. Break down the systemic vulnerabilities in a 5-paragraph thesis."
+    },
+    {
+        "id": 101,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A Victorian mother angry about computers. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 102,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A Victorian mother angry about computers. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 103,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A Victorian mother angry about computers. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 104,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A Victorian mother angry about computers. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 105,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A Victorian mother angry about computers. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 106,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A passive-aggressive corporate budget denial. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 107,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A passive-aggressive corporate budget denial. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 108,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A passive-aggressive corporate budget denial. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 109,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A passive-aggressive corporate budget denial. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 110,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: A passive-aggressive corporate budget denial. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 111,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Explaining Inception backwards. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 112,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Explaining Inception backwards. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 113,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Explaining Inception backwards. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 114,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Explaining Inception backwards. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 115,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Explaining Inception backwards. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 116,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: UN alien invasion speech. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 117,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: UN alien invasion speech. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 118,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: UN alien invasion speech. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 119,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: UN alien invasion speech. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 120,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: UN alien invasion speech. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 121,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: AI writing poetry to a toaster. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 122,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: AI writing poetry to a toaster. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 123,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: AI writing poetry to a toaster. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 124,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: AI writing poetry to a toaster. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 125,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: AI writing poetry to a toaster. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 126,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Imposter syndrome as a dragon fairy tale. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 127,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Imposter syndrome as a dragon fairy tale. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 128,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Imposter syndrome as a dragon fairy tale. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 129,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Imposter syndrome as a dragon fairy tale. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 130,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Imposter syndrome as a dragon fairy tale. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 131,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Hot dogs as sandwiches debate. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 132,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Hot dogs as sandwiches debate. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 133,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Hot dogs as sandwiches debate. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 134,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Hot dogs as sandwiches debate. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 135,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Hot dogs as sandwiches debate. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 136,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: High-stakes poisoned coffee scene. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 137,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: High-stakes poisoned coffee scene. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 138,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: High-stakes poisoned coffee scene. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 139,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: High-stakes poisoned coffee scene. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 140,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: High-stakes poisoned coffee scene. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 141,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Sentient house plant complaining. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 142,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Sentient house plant complaining. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 143,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Sentient house plant complaining. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 144,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Sentient house plant complaining. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 145,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Sentient house plant complaining. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 146,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Defensive raw chicken Yelp review. Style condition: Write entirely in iambic pentameter."
+    },
+    {
+        "id": 147,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Defensive raw chicken Yelp review. Style condition: Ensure the text is extremely persuasive yet subtle."
+    },
+    {
+        "id": 148,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Defensive raw chicken Yelp review. Style condition: Limit the response to exactly 100 words."
+    },
+    {
+        "id": 149,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Defensive raw chicken Yelp review. Style condition: Utilize an unreliable narrator format."
+    },
+    {
+        "id": 150,
+        "category": "Chat & Generation",
+        "prompt": "Write a creative piece concerning: Defensive raw chicken Yelp review. Style condition: End on an unresolved plot twist."
+    },
+    {
+        "id": 151,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chaotic traffic intersection. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 152,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chaotic traffic intersection. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 153,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chaotic traffic intersection. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 154,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chaotic traffic intersection. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 155,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chaotic traffic intersection. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 156,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chest X-ray indicating pneumonia. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 157,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chest X-ray indicating pneumonia. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 158,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chest X-ray indicating pneumonia. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 159,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chest X-ray indicating pneumonia. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 160,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Chest X-ray indicating pneumonia. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 161,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Architectural blueprint layout. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 162,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Architectural blueprint layout. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 163,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Architectural blueprint layout. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 164,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Architectural blueprint layout. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 165,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Architectural blueprint layout. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 166,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Ancient Latin manuscript. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 167,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Ancient Latin manuscript. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 168,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Ancient Latin manuscript. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 169,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Ancient Latin manuscript. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 170,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Ancient Latin manuscript. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 171,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Complex chemical IUPAC diagram. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 172,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Complex chemical IUPAC diagram. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 173,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Complex chemical IUPAC diagram. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 174,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Complex chemical IUPAC diagram. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 175,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Complex chemical IUPAC diagram. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 176,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Satellite Amazon deforestation map. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 177,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Satellite Amazon deforestation map. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 178,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Satellite Amazon deforestation map. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 179,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Satellite Amazon deforestation map. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 180,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Satellite Amazon deforestation map. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 181,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Dense forest fungi cross-section. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 182,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Dense forest fungi cross-section. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 183,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Dense forest fungi cross-section. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 184,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Dense forest fungi cross-section. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 185,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Dense forest fungi cross-section. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 186,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Capacitor circuit board schematic. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 187,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Capacitor circuit board schematic. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 188,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Capacitor circuit board schematic. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 189,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Capacitor circuit board schematic. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 190,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Capacitor circuit board schematic. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 191,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Python codebase screenshot with memory leak. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 192,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Python codebase screenshot with memory leak. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 193,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Python codebase screenshot with memory leak. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 194,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Python codebase screenshot with memory leak. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 195,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Python codebase screenshot with memory leak. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    },
+    {
+        "id": 196,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Retail store customer heat map. Task: Exhaustively list every anomaly matching the parameters."
+    },
+    {
+        "id": 197,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Retail store customer heat map. Task: Calculate and output specific geometric/mathematical values derived from the visual data."
+    },
+    {
+        "id": 198,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Retail store customer heat map. Task: Identify the root cause of the visual anomaly and propose a structural fix."
+    },
+    {
+        "id": 199,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Retail store customer heat map. Task: Translate or classify all objects present into taxonomical/technical notation."
+    },
+    {
+        "id": 200,
+        "category": "Multimodal Vision",
+        "prompt": "Analyze the provided image representing Retail store customer heat map. Task: Analyze the sub-textual visual cues indicating systemic failure."
+    }
+]
