@@ -1,27 +1,137 @@
 {
-  "last_updated": "2026-04-08T17:03:15.512324",
+  "last_updated": "2026-04-09T00:01:59.649550",
   "models": {
     "TinyLlama-1.1B": {
       "status": "completed",
       "category": "Chat",
       "prompts_completed": 50,
       "total_prompts": 50,
-      "started_at": "2026-04-08T16:43:31.855994",
-      "completed_at": "2026-04-08T16:50:23.342904",
+      "started_at": "2026-04-08T16:43:00.000000",
+      "completed_at": "2026-04-08T16:50:00.000000",
       "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\TinyLlama-1.1B_MegaBench_20260408_165023.csv",
       "error": null,
-      "last_checkpoint": "2026-04-08T16:50:23.315478"
+      "last_checkpoint": "2026-04-08T16:50:00.000000"
     },
     "qwen2.5-coder:0.5b": {
       "status": "completed",
       "category": "Coding",
       "prompts_completed": 50,
       "total_prompts": 50,
-      "started_at": "2026-04-08T17:01:21.137431",
-      "completed_at": "2026-04-08T17:03:15.512312",
+      "started_at": "2026-04-08T17:00:00.000000",
+      "completed_at": "2026-04-08T17:02:00.000000",
       "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5-coder_0.5b_MegaBench_20260408_170315.csv",
       "error": null,
-      "last_checkpoint": "2026-04-08T17:03:15.485447"
+      "last_checkpoint": "2026-04-08T17:02:00.000000"
+    },
+    "qwen2.5-coder:0.5b-base": {
+      "status": "completed",
+      "category": "Coding",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T17:17:00.000000",
+      "completed_at": "2026-04-08T17:32:00.000000",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5-coder_0.5b-base_MegaBench_20260408_173243.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T17:32:00.000000"
+    },
+    "qwen2.5-coder:1.5b-instruct": {
+      "status": "completed",
+      "category": "Coding",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T17:38:28.268539",
+      "completed_at": "2026-04-08T17:41:07.407697",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5-coder_1.5b-instruct_MegaBench_20260408_174107.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T17:41:07.390657"
+    },
+    "granite-code:3b": {
+      "status": "completed",
+      "category": "Coding",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T17:46:52.727355",
+      "completed_at": "2026-04-08T17:55:21.173774",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\granite-code_3b_MegaBench_20260408_175521.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T17:55:21.150556"
+    },
+    "deepseek-r1:1.5b": {
+      "status": "completed",
+      "category": "Reasoning",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T17:58:27.960235",
+      "completed_at": "2026-04-08T18:04:02.192339",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\deepseek-r1_1.5b_MegaBench_20260408_180402.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T18:04:02.120265"
+    },
+    "phi4-mini-reasoning": {
+      "status": "completed",
+      "category": "Reasoning",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T18:13:00.779357",
+      "completed_at": "2026-04-08T21:59:09.144061",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\phi4-mini-reasoning_MegaBench_20260408_215909.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T21:59:09.114541"
+    },
+    "qwen2.5:1.5b-instruct": {
+      "status": "completed",
+      "category": "Chat",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T22:07:33.761681",
+      "completed_at": "2026-04-08T23:14:52.638744",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5_1.5b-instruct_MegaBench_20260408_231452.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T23:14:52.624418"
+    },
+    "qwen2:1.5b-instruct": {
+      "status": "completed",
+      "category": "Chat",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T23:19:49.518471",
+      "completed_at": "2026-04-08T23:22:40.235117",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2_1.5b-instruct_MegaBench_20260408_232240.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T23:22:40.220944"
+    },
+    "phi3:mini": {
+      "status": "completed",
+      "category": "Chat",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T23:32:04.766222",
+      "completed_at": "2026-04-08T23:51:08.127740",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\phi3_mini_MegaBench_20260408_235108.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T23:51:08.111228"
+    },
+    "tinyllama": {
+      "status": "completed",
+      "category": "Chat",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T23:52:57.708323",
+      "completed_at": "2026-04-08T23:55:39.869646",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\tinyllama_MegaBench_20260408_235539.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-08T23:55:39.855567"
+    },
+    "llama3.2:1b": {
+      "status": "completed",
+      "category": "Chat",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-08T23:59:05.627753",
+      "completed_at": "2026-04-09T00:01:59.649541",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\llama3.2_1b_MegaBench_20260409_000159.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-09T00:01:59.634281"
     }
   }
 }

@@ -6,10 +6,23 @@ REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 PROMPTS_DIR = os.path.join(BASE_DIR, "prompts")
 MODELS_DIR = os.path.join(BASE_DIR, "models")
 
-# TEMPORARY: Single model for testing
+# Running remaining small models sequentially
 MODEL_CONFIG = {
     "Coding": [
-        {"name": "qwen2.5-coder:0.5b", "ollama_tag": "qwen2.5-coder:0.5b", "source": "ollama"},
+        {"name": "qwen2.5-coder:0.5b-base", "ollama_tag": "qwen2.5-coder:0.5b", "source": "ollama"},
+        {"name": "qwen2.5-coder:1.5b-instruct", "ollama_tag": "qwen2.5-coder:1.5b-instruct", "source": "ollama"},
+        {"name": "granite-code:3b", "ollama_tag": "granite-code:3b", "source": "ollama"},
+    ],
+    "Reasoning": [
+        {"name": "deepseek-r1:1.5b", "ollama_tag": "deepseek-r1:1.5b", "source": "ollama"},
+        {"name": "phi4-mini-reasoning", "ollama_tag": "phi4-mini-reasoning", "source": "ollama"},
+    ],
+    "Chat": [
+        {"name": "qwen2.5:1.5b-instruct", "ollama_tag": "qwen2.5:1.5b-instruct", "source": "ollama"},
+        {"name": "qwen2:1.5b-instruct", "ollama_tag": "qwen2:1.5b-instruct", "source": "ollama"},
+        {"name": "phi3:mini", "ollama_tag": "phi3:mini", "source": "ollama"},
+        {"name": "tinyllama", "ollama_tag": "tinyllama", "source": "ollama"},
+        {"name": "llama3.2:1b", "ollama_tag": "llama3.2:1b", "source": "ollama"},
     ]
 }
 

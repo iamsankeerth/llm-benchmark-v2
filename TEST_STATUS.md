@@ -1,25 +1,40 @@
 # Test Progress Dashboard
-**Last Updated**: 2026-04-08T17:03:15.512324
+**Last Updated**: 2026-04-09T00:01:59.649550
 
 ## Summary
 - **Total Pipeline ETA**: Finishing... (0 models remaining)
-- **Total Models**: 2
-- **Completed**: 2
+- **Total Models**: 12
+- **Completed**: 12
 - **In Progress**: 0
 - **Failed**: 0
 - **Pending**: 0
 
 ## Model Status by Category
 
-### Chat (1 models)
+### Chat (6 models)
 
 | Model | Status | Progress | Time Spent | ETA | Error |
 |-------|--------|----------|------------|-----|-------|
-| TinyLlama-1.1B | ✅ Completed | 50/50 | 6.9m | - | - |
+| TinyLlama-1.1B | ✅ Completed | 50/50 | 7.0m | - | - |
+| qwen2.5:1.5b-instruct | ✅ Completed | 50/50 | 67.3m | - | - |
+| qwen2:1.5b-instruct | ✅ Completed | 50/50 | 2.8m | - | - |
+| phi3:mini | ✅ Completed | 50/50 | 19.1m | - | - |
+| tinyllama | ✅ Completed | 50/50 | 2.7m | - | - |
+| llama3.2:1b | ✅ Completed | 50/50 | 2.9m | - | - |
 
-### Coding (1 models)
+### Coding (4 models)
 
 | Model | Status | Progress | Time Spent | ETA | Error |
 |-------|--------|----------|------------|-----|-------|
-| qwen2.5-coder:0.5b | ✅ Completed | 50/50 | 1.9m | - | - |
+| qwen2.5-coder:0.5b | ✅ Completed | 50/50 | 2.0m | - | - |
+| qwen2.5-coder:0.5b-base | ✅ Completed | 50/50 | 15.0m | - | - |
+| qwen2.5-coder:1.5b-instruct | ✅ Completed | 50/50 | 2.7m | - | - |
+| granite-code:3b | ✅ Completed | 50/50 | 8.5m | - | - |
+
+### Reasoning (2 models)
+
+| Model | Status | Progress | Time Spent | ETA | Error |
+|-------|--------|----------|------------|-----|-------|
+| deepseek-r1:1.5b | ✅ Completed | 50/50 | 5.6m | - | - |
+| phi4-mini-reasoning | ✅ Completed | 50/50 | 226.1m | - | - |
 
