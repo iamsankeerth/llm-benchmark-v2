@@ -6,12 +6,16 @@ REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 PROMPTS_DIR = os.path.join(BASE_DIR, "prompts")
 MODELS_DIR = os.path.join(BASE_DIR, "models")
 
-# All Ollama models from model_commands.md completed/skipped
-# starcoder2:3b - FAILED (too slow, 33 min/prompt)
-# qwen2.5:3b-instruct - SKIPPED per user request
+# Remaining Ollama models from compatible_models.md
 MODEL_CONFIG = {
-    "Coding": [],
-    "Chat": []
+    "Chat": [
+        {"name": "qwen2.5:3b-instruct", "ollama_tag": "qwen2.5:3b-instruct", "source": "ollama"},
+    ],
+    "Multimodal/Vision": [
+        {"name": "qwen2-vl:2b", "ollama_tag": "qwen2-vl:2b", "source": "ollama"},
+        {"name": "SmolVLM-Instruct", "ollama_tag": "SmolVLM-Instruct", "source": "ollama"},
+        {"name": "deepseek-vl2-tiny", "ollama_tag": "deepseek-vl2-tiny", "source": "ollama"},
+    ]
 }
 
 # Backward compatibility

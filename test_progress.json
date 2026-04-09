@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-09T10:01:00.684265",
+  "last_updated": "2026-04-09T11:35:19.851459",
   "models": {
     "TinyLlama-1.1B": {
       "status": "completed",
@@ -178,14 +178,47 @@
       "last_checkpoint": "2026-04-09T09:33:38.724275"
     },
     "qwen2.5:3b-instruct": {
-      "status": "pending",
+      "status": "completed",
       "category": "Chat",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-09T10:14:49.543779",
+      "completed_at": "2026-04-09T11:32:57.528416",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5_3b-instruct_MegaBench_20260409_113257.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-09T11:32:57.484455"
+    },
+    "qwen2-vl:2b": {
+      "status": "failed",
+      "category": "Multimodal/Vision",
       "prompts_completed": 0,
       "total_prompts": 50,
       "started_at": null,
-      "completed_at": null,
+      "completed_at": "2026-04-09T11:35:17.297525",
       "csv_file": null,
-      "error": null,
+      "error": "Download failed",
+      "last_checkpoint": null
+    },
+    "SmolVLM-Instruct": {
+      "status": "failed",
+      "category": "Multimodal/Vision",
+      "prompts_completed": 0,
+      "total_prompts": 50,
+      "started_at": null,
+      "completed_at": "2026-04-09T11:35:18.475642",
+      "csv_file": null,
+      "error": "Download failed",
+      "last_checkpoint": null
+    },
+    "deepseek-vl2-tiny": {
+      "status": "failed",
+      "category": "Multimodal/Vision",
+      "prompts_completed": 0,
+      "total_prompts": 50,
+      "started_at": null,
+      "completed_at": "2026-04-09T11:35:19.851449",
+      "csv_file": null,
+      "error": "Download failed",
       "last_checkpoint": null
     }
   }
