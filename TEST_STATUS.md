@@ -1,10 +1,10 @@
 # Test Progress Dashboard
-**Last Updated**: 2026-04-09T00:01:59.649550
+**Last Updated**: 2026-04-09T08:33:04.639328
 
 ## Summary
 - **Total Pipeline ETA**: Finishing... (0 models remaining)
-- **Total Models**: 12
-- **Completed**: 12
+- **Total Models**: 15
+- **Completed**: 15
 - **In Progress**: 0
 - **Failed**: 0
 - **Pending**: 0
@@ -22,7 +22,7 @@
 | tinyllama | ✅ Completed | 50/50 | 2.7m | - | - |
 | llama3.2:1b | ✅ Completed | 50/50 | 2.9m | - | - |
 
-### Coding (4 models)
+### Coding (7 models)
 
 | Model | Status | Progress | Time Spent | ETA | Error |
 |-------|--------|----------|------------|-----|-------|
@@ -30,6 +30,9 @@
 | qwen2.5-coder:0.5b-base | ✅ Completed | 50/50 | 15.0m | - | - |
 | qwen2.5-coder:1.5b-instruct | ✅ Completed | 50/50 | 2.7m | - | - |
 | granite-code:3b | ✅ Completed | 50/50 | 8.5m | - | - |
+| qwen2.5-coder:0.5b-instruct | ✅ Completed | 50/50 | 1.5m | - | - |
+| qwen2.5-coder:3b | ✅ Completed | 50/50 | 0.4m | - | - |
+| qwen2.5-coder:3b-instruct | ✅ Completed | 50/50 | 3.3m | - | - |
 
 ### Reasoning (2 models)
 

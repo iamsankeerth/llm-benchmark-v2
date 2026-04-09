@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-09T00:01:59.649550",
+  "last_updated": "2026-04-09T10:01:00.684265",
   "models": {
     "TinyLlama-1.1B": {
       "status": "completed",
@@ -132,6 +132,61 @@
       "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\llama3.2_1b_MegaBench_20260409_000159.csv",
       "error": null,
       "last_checkpoint": "2026-04-09T00:01:59.634281"
+    },
+    "qwen2.5-coder:0.5b-instruct": {
+      "status": "completed",
+      "category": "Coding",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-09T08:20:40.716930",
+      "completed_at": "2026-04-09T08:22:09.994879",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5-coder_0.5b-instruct_MegaBench_20260409_082209.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-09T08:22:09.946479"
+    },
+    "qwen2.5-coder:3b": {
+      "status": "completed",
+      "category": "Coding",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-09T08:22:10.291275",
+      "completed_at": "2026-04-09T08:22:36.647384",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5-coder_3b_MegaBench_20260409_082236.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-09T08:22:36.633781"
+    },
+    "qwen2.5-coder:3b-instruct": {
+      "status": "completed",
+      "category": "Coding",
+      "prompts_completed": 50,
+      "total_prompts": 50,
+      "started_at": "2026-04-09T08:29:45.837299",
+      "completed_at": "2026-04-09T08:33:04.639311",
+      "csv_file": "C:\\Users\\lenovo\\Desktop\\San\\Fun_Projects\\LLM Bench Test\\results\\phase1\\qwen2.5-coder_3b-instruct_MegaBench_20260409_083304.csv",
+      "error": null,
+      "last_checkpoint": "2026-04-09T08:33:04.616361"
+    },
+    "starcoder2:3b": {
+      "status": "failed",
+      "category": "Coding",
+      "prompts_completed": 2,
+      "total_prompts": 50,
+      "started_at": "2026-04-09T09:00:02.865696",
+      "completed_at": null,
+      "csv_file": null,
+      "error": "Model too slow - 33 min/prompt, GPU not utilized properly",
+      "last_checkpoint": "2026-04-09T09:33:38.724275"
+    },
+    "qwen2.5:3b-instruct": {
+      "status": "pending",
+      "category": "Chat",
+      "prompts_completed": 0,
+      "total_prompts": 50,
+      "started_at": null,
+      "completed_at": null,
+      "csv_file": null,
+      "error": null,
+      "last_checkpoint": null
     }
   }
 }
