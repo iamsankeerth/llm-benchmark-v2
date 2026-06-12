@@ -33,6 +33,7 @@ from config import MODEL_QUEUE
 from src.artifact_store import BenchmarkArtifactStore
 from src.lifecycle import RuntimeHandle, acquire_runtime, cleanup_runtime
 from src.model_entry import as_model_entry
+from src.runtime_capability import is_llama_benchable
 
 # ─── Configuration ───────────────────────────────────────────────────────────
 
@@ -292,9 +293,7 @@ def run_all_benchmarks(dry_run=False, single_model=None):
     eligible = []
     for m in MODEL_QUEUE:
         entry = as_model_entry(m)
-        if not entry.is_runnable:
-            continue
-        if not entry.is_runtime("ollama", "huggingface_gguf"):
+        if not is_llama_benchable(m):
             continue
         if single_model and single_model.lower() not in entry.requested_name.lower():
             continue

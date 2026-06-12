@@ -8,7 +8,16 @@ from src.artifact_store import BenchmarkArtifactStore
 from src.lifecycle import RuntimeHandle, acquire_runtime, cleanup_runtime, pull_ollama_tag
 from src.live_status import LiveStatusProjection
 from src.model_entry import ModelEntry, safe_name
+from src.phase1_pass import Phase1RunConfig, Phase1BenchmarkPass
+from src.phase_orchestration import PhaseOrchestrator
+from src.progress_projection import ProgressProjection
 from src.quality_eval import QualityEvaluator, _matches_target_model
+from src.result_projection import BenchmarkResultProjection
+from src.runtime_capability import (
+    is_llama_benchable,
+    needs_orchestrated_ollama_lifecycle,
+    resolve_runtime_capability,
+)
 
 
 def sample_model(**overrides):
@@ -54,6 +63,43 @@ class ArtifactStoreTests(unittest.TestCase):
             self.assertTrue(store.perf_done(model))
             self.assertTrue(store.quality_done(model))
             self.assertTrue(store.all_phases_done(model))
+
+    def test_store_delegates_metrics_to_result_projection(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = BenchmarkArtifactStore(tmp)
+            csv_path = store.save_unified_result(
+                [
+                    {
+                        "model": "Sample",
+                        "prompt_id": 1,
+                        "tps": 10,
+                        "latency": 2,
+                        "peak_vram_mb": 512,
+                        "temp_0.0_success": True,
+                    }
+                ],
+                sample_model()["queue_id"],
+            )
+            projection = BenchmarkResultProjection(store)
+
+            self.assertEqual(store.compute_csv_metrics(csv_path), projection.compute_csv_metrics(csv_path))
+            self.assertEqual(store.compute_csv_metrics(csv_path)["json_success_rate"], 100.0)
+
+
+class RuntimeCapabilityTests(unittest.TestCase):
+    def test_runtime_capability_centralizes_queue_and_benchability_rules(self):
+        cap = resolve_runtime_capability({"name": "Qwen2.5-Coder-3B", "hf": ""})
+
+        self.assertEqual(cap.source, "ollama")
+        self.assertEqual(cap.resolved_runtime, "ollama")
+        self.assertTrue(is_llama_benchable(sample_model()))
+        self.assertTrue(needs_orchestrated_ollama_lifecycle(sample_model()))
+
+    def test_runtime_capability_defers_vision_models(self):
+        cap = resolve_runtime_capability({"name": "Demo-VL-Model", "hf": "example/demo"})
+
+        self.assertEqual(cap.status, "deferred_vision")
+        self.assertEqual(cap.resolved_runtime, "deferred_vision")
 
 
 class LifecycleTests(unittest.TestCase):
@@ -115,6 +161,39 @@ class QualityEvaluatorTests(unittest.TestCase):
             self.assertIn("ollama:chat:qwen2.5:3b-instruct", config)
 
 
+class Phase1PassTests(unittest.TestCase):
+    def test_phase1_config_keeps_unbounded_structured_limit_deep_in_pass(self):
+        config = Phase1RunConfig(
+            model_queue=[],
+            prompts_dir=".",
+            models_dir=".",
+            temps_to_test=[0.0],
+            phase2_prompt_limit=None,
+        )
+
+        self.assertEqual(config.phase2_limit, 2**62)
+        self.assertEqual(Phase1BenchmarkPass.target_category_for("Coding"), "Coding Generation")
+        self.assertEqual(Phase1BenchmarkPass.target_category_for("Unknown"), "Multimodal Vision")
+
+
+class PhaseOrchestratorTests(unittest.TestCase):
+    def test_orchestrator_eligibility_uses_runtime_capability(self):
+        models = [
+            sample_model(),
+            sample_model(
+                queue_id="Coding:huggingface:Sample:repo",
+                source="huggingface",
+                resolved_runtime="hf_transformers",
+                ollama_tag="",
+            ),
+        ]
+        orchestrator = PhaseOrchestrator(model_queue=models)
+
+        self.assertEqual(orchestrator.eligible_models(), [models[0]])
+        self.assertEqual(orchestrator.eligible_models("sample"), [models[0]])
+        self.assertEqual(orchestrator.eligible_models("missing"), [])
+
+
 class LiveStatusProjectionTests(unittest.TestCase):
     def test_status_projection_reads_metrics_through_artifact_store(self):
         class FakeSystem:
@@ -167,6 +246,35 @@ class LiveStatusProjectionTests(unittest.TestCase):
         self.assertEqual(payload["status"], "idle")
         self.assertEqual(payload["completed_models"][0]["tps_avg"], 10.0)
         self.assertEqual(payload["all_models"][0]["json_success_rate"], 100.0)
+
+    def test_progress_projection_generates_markdown_and_live_models_from_same_seam(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = BenchmarkArtifactStore(tmp)
+            store.save_progress(
+                {
+                    "models": {
+                        sample_model()["queue_id"]: {
+                            "model_name": "Sample",
+                            "category": "Coding",
+                            "status": "pending",
+                            "prompts_completed": 0,
+                            "total_prompts": 1,
+                        }
+                    }
+                }
+            )
+
+            projection = ProgressProjection(store=store, queue_loader=lambda: [sample_model()])
+            markdown = projection.markdown_report(store.load_progress())
+            payload = projection.live_payload(
+                process_alive=False,
+                process_pid=None,
+                gpu={"utilization": "N/A", "vram_used": "N/A", "vram_total": "N/A"},
+                log_tail=[],
+            )
+
+        self.assertIn("Test Progress Dashboard", markdown)
+        self.assertEqual(payload["all_models"][0]["status"], "pending")
 
 
 if __name__ == "__main__":

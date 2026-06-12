@@ -1,264 +1,112 @@
-"""
-Model queue builder – uses compatible_models.py as the source of truth
-to generate a flat queue of models for category-matched benchmarking.
+"""Model queue builder.
 
-Provider resolution (honest path):
-  1. Has known Ollama tag        → source = "ollama",      runtime = "ollama"
-  2. Is VL/Vision/OCR/multimodal → status = "deferred_vision"
-  3. Is AWQ/GPTQ/FP8 without Ollama tag → source = "provider_unsupported"
-  4. HF repo in _KNOWN_GGUF_REPOS → source = "huggingface", runtime = "huggingface_gguf"
-  5. HF repo NOT in _KNOWN_GGUF_REPOS
-     → source = "provider_unsupported", status = "provider_unsupported"
-       (Transformers runner not implemented – cannot load these repos)
-
-Every queue entry has a stable unique queue_id and full identity metadata
-so the benchmark never silently runs the wrong model variant.
+The compatible-model catalog remains the source of truth for candidates. Runtime
+capability rules live in ``src.runtime_capability`` so queue construction does
+not duplicate provider, variant, and benchability decisions.
 """
+
+from __future__ import annotations
 
 from compatible_models import COMPATIBLE_MODELS, GOOD_FIT_MOE
 from src.model_entry import ModelEntry
+from src.runtime_capability import (
+    KNOWN_GGUF_REPOS,
+    KNOWN_OLLAMA_TAGS,
+    is_quantized_variant,
+    is_vision_model,
+    make_queue_id,
+    resolve_runtime_capability,
+)
 
-# ---------------------------------------------------------------------------
-# Known Ollama tags derived from model_commands.md Ollama section + TESTED_MODELS
-# ---------------------------------------------------------------------------
-_KNOWN_OLLAMA_TAGS = {
-    # --- Coding ---
-    "Qwen2.5-Coder-0.5B":             "qwen2.5-coder:0.5b",
-    "Qwen2.5-Coder-0.5B-Instruct":    "qwen2.5-coder:0.5b-instruct",
-    "Qwen2.5-Coder-1.5B-Instruct":    "qwen2.5-coder:1.5b-instruct",
-    "Qwen2.5-Coder-1.5B-Instruct-AWQ":"qwen2.5-coder:1.5b-instruct",
-    "Qwen2.5-Coder-3B":               "qwen2.5-coder:3b",
-    "Qwen2.5-Coder-3B-Instruct":      "qwen2.5-coder:3b-instruct",
-    "starcoder2-3b":                  "starcoder2:3b",
-    "granite-3b-code-base-2k":        "granite-code:3b",
-    # --- Chat ---
-    "TinyLlama-1.1B-Chat-v1.0":       "tinyllama",
-    "Llama-3.2-1B-Instruct":          "llama3.2:1b",
-    "Llama-3.2-3B-Instruct":          "llama3.2:3b",
-    "Llama-3.2-3B":                   "llama3.2:3b",
-    "Qwen2.5-1.5B-Instruct":          "qwen2.5:1.5b-instruct",
-    "Qwen2-1.5B-Instruct":            "qwen2:1.5b-instruct",
-    "Qwen2.5-3B-Instruct":            "qwen2.5:3b-instruct",
-    "Qwen3-0.6B":                     "qwen3:0.6b",
-    "Qwen3-1.7B":                     "qwen3:1.7b",
-    "Qwen3-1.7B-Base":                "qwen3:1.7b",
-    "Qwen3-4B-Base":                  "qwen3:4b",
-    "Qwen3-4B-Instruct-2507":         "qwen3:4b",
-    "Qwen3.5-0.8B":                   "qwen3.5:0.8b",
-    "Qwen3.5-0.8B-Base":              "qwen3.5:0.8b",
-    "Qwen3.5-2B":                     "qwen3.5:2b",
-    "Qwen3.5-2B-Base":                "qwen3.5:2b",
-    "gemma-2b":                       "gemma:2b",
-    "gemma-1.1-2b-it":                "gemma:2b",
-    "gemma-2-2b-it":                  "gemma2:2b",
-    "gemma-2-2b-jpn-it":              "gemma2:2b",
-    "Phi-3-mini-4k-instruct":         "phi3:mini",
-    "Phi-3.5-mini-instruct":          "phi3.5:mini",
-    # --- Reasoning ---
-    "Phi-4-mini-reasoning":           "phi4-mini-reasoning",
-    "DeepSeek-R1-Distill-Qwen-1.5B":  "deepseek-r1:1.5b",
-    "Qwen2.5-Math-1.5B-Instruct":     "qwen2.5-math:1.5b",
-    "Qwen2.5-Math-1.5B":              "qwen2.5-math:1.5b",
-    "Qwen3-4B-Thinking-2507":         "qwen3:4b",
-}
-
-# ---------------------------------------------------------------------------
-# HF repos that are KNOWN to contain GGUF artifacts and can be loaded.
-# Until a full Transformers runner is implemented, HF repos NOT on this list
-# are marked provider_unsupported.
-# ---------------------------------------------------------------------------
-_KNOWN_GGUF_REPOS: set[str] = {
-    # Verified GGUF repos on HuggingFace (unsloth / QuantFactory / second-state)
-    "bigcode/gpt_bigcode-santacoder",          # via second-state/santacoder-GGUF
-    "ShahriarFerdoush/llama-3.2-1b-code-instruct",
-    "stabilityai/stablelm-2-1_6b-chat",
-    "ibm-granite/granite-4.0-h-micro",
-    "KiteFishAI/Minnow-Math-1.5B",
-    "Vikhrmodels/QVikhr-3-1.7B-Instruction-noreasoning",
-    "ibm-research/PowerMoE-3b",
-    "ibm-research/PowerLM-3b",
-}
-
-# ---------------------------------------------------------------------------
-# Dirty check for VL / Vision / OCR models
-# ---------------------------------------------------------------------------
-_VL_KEYWORDS = [
-    "VL-", "vl-", "VL2", "VL3", "Vision", "OCR", "ocr",
-    "SmolVLM", "InternVL", "h2ovl", "moondream", "deepseek-vl",
-    "paligemma", "Video", "GOT-OCR", "Typhoon-OCR", "DeepSeek-OCR",
-]
+# Backward-compatible names used by existing validators and scripts.
+_KNOWN_GGUF_REPOS = KNOWN_GGUF_REPOS
+_KNOWN_OLLAMA_TAGS = KNOWN_OLLAMA_TAGS
 
 
 def _is_vl(name: str) -> bool:
-    return any(kw.lower() in name.lower() for kw in _VL_KEYWORDS)
+    return is_vision_model(name)
 
 
 def _is_awq_or_gptq(name: str) -> bool:
-    upper = name.upper()
-    return ("AWQ" in upper or "GPTQ" in upper or "-FP8" in upper)
+    return is_quantized_variant(name)
 
 
 def _make_queue_id(category: str, source: str, name: str, ref: str) -> str:
-    """Build a stable unique queue_id. Safe as a JSON key."""
-    ref = ref.replace("\\", "/")
-    return f"{category}:{source}:{name}:{ref}"
+    return make_queue_id(category, source, name, ref)
 
 
 def _resolve_identity(model: dict) -> dict:
-    """Resolve provider and variant identity for one model.
+    return resolve_runtime_capability(model).to_dict()
 
-    Returns a dict with:
-      source, resolved_runtime, resolved_model_ref, variant_note, status, ollama_tag
-    """
-    name = model["name"]
-    hf_repo = model.get("hf", "")
-
-    # 1. Vision models are always deferred
-    if _is_vl(name):
-        return {
-            "source": "provider_unsupported",
-            "resolved_runtime": "deferred_vision",
-            "resolved_model_ref": hf_repo or name,
-            "variant_note": "",
-            "status": "deferred_vision",
-            "ollama_tag": "",
-        }
-
-    # 2. Has a known Ollama tag
-    if name in _KNOWN_OLLAMA_TAGS:
-        tag = _KNOWN_OLLAMA_TAGS[name]
-        variant = ""
-        if _is_awq_or_gptq(name):
-            variant = (
-                f"Requested AWQ/GPTQ/FP8 HF variant resolved to standard Ollama "
-                f"instruct tag {tag}; results reflect the Ollama tag, not the "
-                f"quantised variant."
-            )
-        return {
-            "source": "ollama",
-            "resolved_runtime": "ollama",
-            "resolved_model_ref": tag,
-            "variant_note": variant,
-            "status": "pending",
-            "ollama_tag": tag,
-        }
-
-    # 3. AWQ/GPTQ/FP8 without Ollama tag → route to vLLM
-    if _is_awq_or_gptq(name):
-        return {
-            "source": "huggingface",
-            "resolved_runtime": "vllm",
-            "resolved_model_ref": hf_repo,
-            "variant_note": "AWQ/GPTQ/FP8 quantised repo — requires vLLM runtime",
-            "status": "pending",
-            "ollama_tag": "",
-        }
-
-    # 4. HF repo in known GGUF list → loadable
-    if hf_repo in _KNOWN_GGUF_REPOS:
-        return {
-            "source": "huggingface",
-            "resolved_runtime": "huggingface_gguf",
-            "resolved_model_ref": hf_repo,
-            "variant_note": "",
-            "status": "pending",
-            "ollama_tag": "",
-        }
-
-    # 5. HF-only repo, not in GGUF allowlist → route to HF Transformers
-    return {
-        "source": "huggingface",
-        "resolved_runtime": "hf_transformers",
-        "resolved_model_ref": hf_repo,
-        "variant_note": (
-            f"HF repo {hf_repo} loaded via HuggingFace Transformers with 4-bit quantization."
-        ) if hf_repo else "No loadable artifacts available for this model.",
-        "status": "pending" if hf_repo else "provider_unsupported",
-        "ollama_tag": "",
-    }
-
-
-# ---------------------------------------------------------------------------
-# Main public API
-# ---------------------------------------------------------------------------
 
 def build_model_queue() -> list[dict]:
-    """Build the benchmark model queue.
-
-    Returns a flat list of dicts, one per model, with keys:
-      queue_id, requested_name, category, source, resolved_runtime,
-      resolved_model_ref, variant_note, ollama_tag, hf_repo,
-      size, estimated_tps, fit_level, is_moe, status
-    """
+    """Build the benchmark model queue with stable identity metadata."""
     queue: list[dict] = []
     seen_ids: set[str] = set()
 
-    def _add(model: dict, category: str, fit_level: str,
-             is_moe: bool = False):
-        ident = _resolve_identity(model)
+    def add_model(model: dict, category: str, fit_level: str, is_moe: bool = False):
+        capability = resolve_runtime_capability(model)
         name = model["name"]
         hf_repo = model.get("hf", "")
-        tag = ident["ollama_tag"]
-
-        queue_id = _make_queue_id(category, ident["source"], name,
-                                   tag or hf_repo or name)
-
+        queue_id = make_queue_id(
+            category,
+            capability.source,
+            name,
+            capability.ollama_tag or hf_repo or name,
+        )
         if queue_id in seen_ids:
             return
         seen_ids.add(queue_id)
 
-        queue.append(ModelEntry(
-            queue_id=queue_id,
-            requested_name=name,
-            category=category,
-            source=ident["source"],
-            resolved_runtime=ident["resolved_runtime"],
-            resolved_model_ref=ident["resolved_model_ref"],
-            variant_note=ident["variant_note"],
-            ollama_tag=tag,
-            hf_repo=hf_repo,
-            size=model.get("size", "?"),
-            estimated_tps=model.get("tps", 0),
-            fit_level=fit_level,
-            is_moe=model.get("moe", is_moe),
-            status=ident["status"],
-        ).to_dict())
+        queue.append(
+            ModelEntry(
+                queue_id=queue_id,
+                requested_name=name,
+                category=category,
+                source=capability.source,
+                resolved_runtime=capability.resolved_runtime,
+                resolved_model_ref=capability.resolved_model_ref,
+                variant_note=capability.variant_note,
+                ollama_tag=capability.ollama_tag,
+                hf_repo=hf_repo,
+                size=model.get("size", "?"),
+                estimated_tps=model.get("tps", 0),
+                fit_level=fit_level,
+                is_moe=model.get("moe", is_moe),
+                status=capability.status,
+            ).to_dict()
+        )
 
-    # --- Coding ---
-    for m in COMPATIBLE_MODELS["coding"]["perfect"]:
-        _add(m, "Coding", "perfect")
-    for m in COMPATIBLE_MODELS["coding"]["good"]:
-        _add(m, "Coding", "good", is_moe=True)
+    for model in COMPATIBLE_MODELS["coding"]["perfect"]:
+        add_model(model, "Coding", "perfect")
+    for model in COMPATIBLE_MODELS["coding"]["good"]:
+        add_model(model, "Coding", "good", is_moe=True)
 
-    # --- Chat ---
     for tier in ("small", "medium", "large", "moe"):
-        for m in COMPATIBLE_MODELS["chat"].get(tier, []):
-            _add(m, "Chat", tier, is_moe=m.get("moe", tier == "moe"))
+        for model in COMPATIBLE_MODELS["chat"].get(tier, []):
+            add_model(model, "Chat", tier, is_moe=model.get("moe", tier == "moe"))
 
-    # --- Multimodal ---
     for tier in ("small", "medium", "large", "good"):
-        for m in COMPATIBLE_MODELS.get("multimodal", {}).get(tier, []):
-            _add(m, "Vision", tier, is_moe=m.get("moe", False))
+        for model in COMPATIBLE_MODELS.get("multimodal", {}).get(tier, []):
+            add_model(model, "Vision", tier, is_moe=model.get("moe", False))
 
-    # --- Reasoning ---
-    for m in COMPATIBLE_MODELS["reasoning"].get("perfect", []):
-        _add(m, "Reasoning", "perfect")
+    for model in COMPATIBLE_MODELS["reasoning"].get("perfect", []):
+        add_model(model, "Reasoning", "perfect")
 
-    # --- GOOD_FIT_MOE ---
-    for m in GOOD_FIT_MOE:
-        ident = _resolve_identity(m)
-        if ident["status"] == "deferred_vision":
-            _add(m, "Vision", "deferred_vision")
+    for model in GOOD_FIT_MOE:
+        capability = resolve_runtime_capability(model)
+        if capability.status == "deferred_vision":
+            add_model(model, "Vision", "deferred_vision")
             continue
 
-        n = m["name"]
-        if "Coder" in n or "code" in n.lower():
-            cat = "Coding"
-        elif "Reason" in n or "Think" in n or "Math" in n:
-            cat = "Reasoning"
+        name = model["name"]
+        if "Coder" in name or "code" in name.lower():
+            category = "Coding"
+        elif "Reason" in name or "Think" in name or "Math" in name:
+            category = "Reasoning"
         else:
-            cat = "Chat"
-        _add(m, cat, "good_fit_moe", is_moe=m.get("moe", True))
+            category = "Chat"
+        add_model(model, category, "good_fit_moe", is_moe=model.get("moe", True))
 
     return queue
 
@@ -266,19 +114,17 @@ def build_model_queue() -> list[dict]:
 def queue_summary(queue: list[dict]) -> str:
     """Return a human-readable summary of the queue."""
     total = len(queue)
-    runnable = sum(1 for m in queue if m["status"] == "pending")
-    unsupported = sum(1 for m in queue if m["status"] == "provider_unsupported")
-    deferred = sum(1 for m in queue if m["status"] == "deferred_vision")
+    runnable = sum(1 for model in queue if model["status"] == "pending")
+    unsupported = sum(1 for model in queue if model["status"] == "provider_unsupported")
+    deferred = sum(1 for model in queue if model["status"] == "deferred_vision")
 
-    by_cat: dict[str, int] = {}
-    for m in queue:
-        cat = m["category"]
-        by_cat[cat] = by_cat.get(cat, 0) + 1
-
+    by_category: dict[str, int] = {}
     by_runtime: dict[str, int] = {}
-    for m in queue:
-        rt = m.get("resolved_runtime", "?")
-        by_runtime[rt] = by_runtime.get(rt, 0) + 1
+    for model in queue:
+        category = model["category"]
+        runtime = model.get("resolved_runtime", "?")
+        by_category[category] = by_category.get(category, 0) + 1
+        by_runtime[runtime] = by_runtime.get(runtime, 0) + 1
 
     lines = [
         "Model Queue Summary",
@@ -290,10 +136,10 @@ def queue_summary(queue: list[dict]) -> str:
         "-" * 40,
         "By benchmark category:",
     ]
-    for cat, cnt in sorted(by_cat.items()):
-        lines.append(f"  {cat}: {cnt}")
+    for category, count in sorted(by_category.items()):
+        lines.append(f"  {category}: {count}")
     lines.append("-" * 40)
     lines.append("By resolved runtime:")
-    for rt, cnt in sorted(by_runtime.items()):
-        lines.append(f"  {rt}: {cnt}")
+    for runtime, count in sorted(by_runtime.items()):
+        lines.append(f"  {runtime}: {count}")
     return "\n".join(lines)
